@@ -4,7 +4,7 @@ import MovieList from './MovieList.jsx'
 const Content = ({ items, handleDelete }) => {
 
   return (
-    <div>
+    <div className="movie-list">
         {items.length ? (
             <MovieList 
                 items={items}

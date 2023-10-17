@@ -14,6 +14,7 @@ const LineItem = ({ item, handleDelete }) => {
             />
         </li>
     )
+   
 }
 
 export default LineItem

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import Navbar2 from './components/navBar/Navbar2'
+import SiteNavBar from './components/navBar/SiteNavBar.jsx'
 import AddMovie from './components/AddMovie.jsx'
 import Content from './components/Content.jsx'
 import Header from './components/Header.jsx'
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <>
-      <Navbar2 />
+      <SiteNavBar />
 
       <div className="container">
         <Header

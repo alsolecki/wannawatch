@@ -1,5 +1,6 @@
-
 nav {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,12 +10,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 2;
-    height: 84px;
-}
-
-nav img {
-    -webkit-filter: invert(.9);
-    filter: invert(.9);
+    height: 80px;
 }
 
 nav ul {
@@ -28,17 +24,25 @@ nav ul.open {
     padding-left: 0;
 }
 
+nav ul.unopen {
+    padding: 14px 4px 0 4px;
+}
+
 nav ul li {
-    list-style-type: none;
+    list-style-type: none; 
 }
 
 nav ul li a {
     display: block;
     text-decoration: none;
     color: whitesmoke;
-    padding: 0.5rem;
+    padding:  0.5rem 0.5rem 0.5rem 0;
     margin: 0 0.5rem;
     border-radius: 0.5rem;
+}
+
+nav ul li a:hover {
+    color: rgb(203, 221, 62)
 }
 
 nav .menu {
@@ -65,36 +69,41 @@ nav .menu span {
     margin-top: 10px;
 }
 
+.home svg {
+    color: whitesmoke;
+    width: 22px;
+    height: 22px
+}
+
+.home svg:hover {
+    color: rgb(203, 221, 62);
+}
+
+
 @media (max-width: 480px) {
     nav .menu {
         display: flex;
         margin-top: 15px;
         margin-right: 10px;
     }
-
     nav {
         flex-direction: column;
         align-items: start;
     }
-
     nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
         margin-bottom: 0.25rem;
     }
-
     nav ul li {
         width: 100%;
         text-align: center;
     }
-
     nav ul li a {
         margin: 0.2rem 0.5rem; 
     }
-
     nav .home {
-        margin-top: 20px;
+        margin-top: 30px;
     }
-
 }
