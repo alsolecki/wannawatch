@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 import MovieList from './MovieList.jsx'
 
-const Content = ({ items, handleCheck, handleDelete }) => {
+const Content = ({ items, handleDelete }) => {
 
   return (
     <div>
         {items.length ? (
             <MovieList 
                 items={items}
-                handleCheck={handleCheck}
                 handleDelete={handleDelete}
             />
         ) : (

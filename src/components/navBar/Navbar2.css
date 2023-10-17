@@ -19,6 +19,7 @@ nav img {
 
 nav ul {
     display: flex;
+    justify-content: flex-end;
 }
 
 nav ul.open {

@@ -13,7 +13,7 @@ const AddMovie = ({newMovie, setNewMovie, handleSubmit }) => {
             ref={inputRef}
             id="AddMovie"
             type="text"
-            placeholder="Add Movie"
+            placeholder="Add a movie..."
             required
             value={newMovie}
             onChange={(e) => setNewMovie(e.target.value)}

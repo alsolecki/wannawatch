@@ -1,31 +1,57 @@
 .container {
-    border: rgba(255, 255, 255, 0.2) solid 1px;
+    /* border: rgba(255, 255, 255, 0.2) solid 1px; */
     margin: 100px auto 10px;
     width: 350px;
-    padding: 20px;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 form {
     display: flex;
 }
 
+ul {
+    width: 100%;
+    list-style: none;
+    padding: 0 0.25rem 0.25rem;
+}
+
 .movie-card {
     border:rgba(255, 255, 255, 0.2) solid 1px;
-    list-style-type: none;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
     display: flex;
     justify-content: space-between;
+    padding: 0.25rem 0 0.25rem 1rem;
+    min-height: 3rem;
+    width: 320px;
 }
 
 .movie-card label {
     align-self: center;
 }
 
-footer p {
-    font-size: .75rem;
+.movie-card svg {
+    width: 32px;
+    height: 20px;
+    color: rgb(87, 137, 179);
+    cursor: pointer;
+    align-self: center;
+}
+
+.movie-card svg:focus, 
+.movie-card svg:hover {
+  color: rgb(218, 65, 65);
+  outline: none;
 }
 
 .addForm label, .searchForm label {
@@ -33,4 +59,39 @@ footer p {
     left: -99999px;
 }
 
+footer {
+    width: 100%;
+    padding: 0.25em;
+    display: grid;
+    place-content: center;
+    font-size: .75rem;
+    color: whitesmoke;
+}
 
+.addForm {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.addForm input[type='text'] {
+    flex-grow: 1;
+    max-width: calc(100% - 50px);
+    min-height: 48px;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    margin-right: 0.25rem;
+    outline: none;
+}
+
+button {
+    height: 48px;
+    min-width: 48px;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: papayawhip;
+    color: rgb(87, 137, 179);
+    cursor: pointer;
+}

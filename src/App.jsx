@@ -3,33 +3,18 @@ import './App.css'
 import Navbar2 from './components/navBar/Navbar2'
 import AddMovie from './components/AddMovie.jsx'
 import Content from './components/Content.jsx'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
 
-
-const Header = ({ title }) => {
-  return(
-    <header>
-      <h1>{title}</h1>
-    </header>
-  )
-}
-
-const Footer = ( {length} ) => {
-  return(
-    <footer>
-      <p>{length} list {length === 1 ? "movie" : "movies"} </p>
-    </footer>
-  )
-}
 
 function App() {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('movieList')) || []);
-
   const [newMovie, setNewMovie] = useState('');
+
 
   useEffect(() => {
     localStorage.setItem('movieList', JSON.stringify(items));
   }, [items])
-
 
 
   const addItem = (title) => {
@@ -58,13 +43,11 @@ function App() {
     setNewMovie('');
   }
 
-
   return (
     <>
       <Navbar2 />
 
       <div className="container">
-
         <Header
           title="WannaWatch"
           />
