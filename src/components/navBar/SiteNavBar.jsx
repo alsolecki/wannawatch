@@ -4,7 +4,7 @@ import { GiDuck, GiHouse } from "react-icons/gi";
 import './SiteNavBar.css'
 
 
-const Navbar2 = () => {
+const SiteNavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     let menuRef = useRef();
@@ -49,4 +49,4 @@ const Navbar2 = () => {
   )
 }
 
-export default Navbar2
+export default SiteNavBar;
