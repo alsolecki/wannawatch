@@ -2,10 +2,9 @@ import React from 'react'
 import { useSortable } from "@dnd-kit/sortable";
 import {CSS} from "@dnd-kit/utilities";
 import { FaTrashAlt } from 'react-icons/fa'
+import { RxDragHandleDots1 } from "react-icons/rx";
 
 const LineItem = ({ item, handleDelete }) => {
-
-    const deleted = () => console.log('deleted');
 
     const {
         attributes,
@@ -20,17 +19,22 @@ const LineItem = ({ item, handleDelete }) => {
         transition
     }
 
-
     return (
-        <li className="movie-card" ref={setNodeRef} style={style} {...attributes} {...listeners}>      
+        <li className="movie-card" ref={setNodeRef} style={style} {...attributes} > 
                 <label>{item.title}</label>
-                <FaTrashAlt
-                    className="trashcan"
-                    role="button" 
-                    onClick={() => handleDelete(item.id)}
-                    tabIndex="0"
-                    aria-label={`Delete ${item.item}`}
-                />
+                <div className="card-controls">
+                    <RxDragHandleDots1 
+                        className="drag-handle"
+                        {...listeners}
+                    />
+                    <FaTrashAlt
+                        className="trashcan"
+                        role="button" 
+                        onClick={() => handleDelete(item.id)}
+                        tabIndex="0"
+                        aria-label={`Delete ${item.item}`}
+                    />
+                </div>
         </li>
     )
 }

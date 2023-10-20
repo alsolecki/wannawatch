@@ -1,10 +1,11 @@
 import React from 'react'
 import { DndContext, closestCenter } from '@dnd-kit/core'
-import { arrayMove, SortableContext, verticalListSortingStrategy} from '@dnd-kit/sortable'
+import { arrayMove, SortableContext, verticalListSortingStrategy, useSortable} from '@dnd-kit/sortable'
 
 import LineItem from './LineItem.jsx'
 
 const MovieList = ({ items, handleDelete, setItems }) => {
+
 
   return (
 
@@ -31,11 +32,11 @@ const MovieList = ({ items, handleDelete, setItems }) => {
   )
 
   function handleDragEnd(event) {
-    console.log("Drag and called");
+    // console.log("Drag and called");
     const {active, over} = event;
     console.log(event)
-    console.log("ACTIVE: " + active.id);
-    console.log("OVER: " + over.id);
+    // console.log("ACTIVE: " + active.id);
+    // console.log("OVER: " + over.id);
 
     //logic for setting new array
     if(active.id !== over.id) {
