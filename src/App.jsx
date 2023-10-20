@@ -26,10 +26,6 @@ function App() {
   }  
 
   const addItem = (title) => {
-    //ternary statement to set the id value
-    //currently duplicating ids!! need to fix
-    //confirm that the key
-    
     const id = createNewId();
     const myNewItem = {id, title}
     const listItems = [...items, myNewItem];

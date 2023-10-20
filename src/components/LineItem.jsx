@@ -28,7 +28,6 @@ const LineItem = ({ item, handleDelete }) => {
                     className="trashcan"
                     role="button" 
                     onClick={() => handleDelete(item.id)}
-                    // onClick={deleted()} 
                     tabIndex="0"
                     aria-label={`Delete ${item.item}`}
                 />

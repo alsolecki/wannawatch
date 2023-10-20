@@ -22,7 +22,6 @@ const AddMovie = ({newMovie, setNewMovie, handleSubmit }) => {
             type="submit"
             aria-label="Add Movie"
             onClick={() => inputRef.current.focus()}
-        
         >
             <FaPlus />
         </button>

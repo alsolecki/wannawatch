@@ -37,7 +37,6 @@ const MovieList = ({ items, handleDelete, setItems }) => {
     console.log("ACTIVE: " + active.id);
     console.log("OVER: " + over.id);
 
-    
     //logic for setting new array
     if(active.id !== over.id) {
       setItems((items) => {
