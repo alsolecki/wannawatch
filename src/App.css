@@ -113,3 +113,7 @@ button {
     color: var(--accent-color-blue);
     cursor: pointer;
 }
+
+.trashcan {
+    z-index: 1000;
+}
