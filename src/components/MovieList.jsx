@@ -34,7 +34,7 @@ const MovieList = ({ items, handleDelete, setItems }) => {
   function handleDragEnd(event) {
     // console.log("Drag and called");
     const {active, over} = event;
-    console.log(event)
+    // console.log(event)
     // console.log("ACTIVE: " + active.id);
     // console.log("OVER: " + over.id);
 
@@ -43,7 +43,7 @@ const MovieList = ({ items, handleDelete, setItems }) => {
       setItems((items) => {
         const oldIndex = items.findIndex(f => f.id === active.id);
         const newIndex = items.findIndex(f => f.id === over.id);
-        console.log(arrayMove(items, oldIndex, newIndex));
+        // console.log(arrayMove(items, oldIndex, newIndex));
         return arrayMove(items, oldIndex, newIndex);
       })
     }
