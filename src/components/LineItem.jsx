@@ -2,6 +2,7 @@ import React from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 
 const LineItem = ({ item, handleDelete }) => {
+
     return (
         <li 
             className="movie-card">
