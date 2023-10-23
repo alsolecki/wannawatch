@@ -48,7 +48,7 @@ form {
     min-height: 3rem;
     min-width: 320px;
     max-width: 100%;
-    touch-action: none;
+    touch-action: manipulation;
 }
 
 .movie-card label {
