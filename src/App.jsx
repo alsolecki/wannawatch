@@ -57,12 +57,15 @@ function App() {
             setNewMovie={setNewMovie}
             handleSubmit={handleSubmit}
           />
+          {/* <div className="error-msg">
+            <p>ERROR: Movie title is already on the list</p>
+          </div> */}
 
-            <Content
-              items={items}
-              handleDelete={handleDelete}
-              setItems={setItems}
-            />
+          <Content
+            items={items}
+            handleDelete={handleDelete}
+            setItems={setItems}
+          />
 
           <Footer length={items.length} />
         </div>

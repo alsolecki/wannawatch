@@ -41,7 +41,7 @@ form {
 
 .movie-card {
     border:rgba(255, 255, 255, 0.2) solid 1px;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     display: flex;
     justify-content: space-between;
     padding: 0.25rem 0 0.25rem 1rem;
@@ -63,14 +63,32 @@ form {
     align-self: center;
     padding: 8px 4px 2px 10px;
     margin: 0 10px;
+    transform: 
+        rotate(90deg)
+        scale(1.3);
 }
+
+.error-msg {
+    display: flex;
+    width: 100%;
+    height: min-content;
+    padding-left: 1rem;
+
+}
+.error-msg p {
+    font-weight: 600;
+    margin: -8px 0 -10px;
+    color:rgb(218, 65, 65);
+    letter-spacing: 1.25px;
+}
+
 .trashcan {
     width: 46px;
     height: 40px;
     color: var(--accent-color-blue);
     cursor: pointer;
     align-self: center;
-    padding: 12px 6px 6px 6px;
+    padding: 12px 8px 6px 6px;
 }
 
 .trashcan:hover {
@@ -96,6 +114,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 0.75rem;
 }
 
 .addForm input[type='text'] {
@@ -107,6 +126,7 @@ footer {
     border-radius: 0.25rem;
     margin-right: 0.25rem;
     outline: none;
+    border:rgba(255, 255, 255, 0.2) solid 1px;
 }
 
 button {
@@ -118,10 +138,7 @@ button {
     background-color: papayawhip;
     color: var(--accent-color-blue);
     cursor: pointer;
+    border:rgba(255, 255, 255, 0.2) solid 1px;
 }
-
-/* .card-controls {
-
-} */
 
 
