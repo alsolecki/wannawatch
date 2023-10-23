@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
 
-const AddMovie = ({newMovie, setNewMovie, handleSubmit }) => {
+const AddMovie = ({ newMovie, setNewMovie, handleSubmit }) => {
 
     const inputRef = useRef();
 

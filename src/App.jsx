@@ -11,25 +11,25 @@ function App() {
 
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('movielist')) || []);
   const [newMovie, setNewMovie] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
   //why are we using useEffect here? setting items to the local storage is an effect that needs attention when it's dependency is changed/triggered (items)
   useEffect(() => {
     localStorage.setItem('movielist', JSON.stringify(items));
   }, [items])
-  
-  const createNewId = () => {
-    const arrayOfIds = [0];
-    for (let i = 0; i < items.length; i++){
-      arrayOfIds.push(items[i].id);
-    }; 
-    return Math.max(...arrayOfIds) + 1;
-  }  
 
   const addItem = (title) => {
-    const id = createNewId();
+    setErrorMsg('');
+    const id = title.replace(/\s/g, "").toLowerCase();
+    //check for existing id 
+    const filterResult = items.filter((item) => item.id === id)
+    if (filterResult.length === 0) {
     const myNewItem = {id, title}
     const listItems = [...items, myNewItem];
     setItems(listItems);
+    } else {
+      handleError(filterResult[0].title);
+    }
   }
 
   const handleDelete = (id) => {
@@ -42,6 +42,10 @@ function App() {
     if (!newMovie) return;
     addItem(newMovie);
     setNewMovie('');
+  }
+
+  const handleError = (title) => {
+    setErrorMsg(`NOT ADDED: ${title} is already exists in the list`);
   }
 
   return (
@@ -57,9 +61,12 @@ function App() {
             setNewMovie={setNewMovie}
             handleSubmit={handleSubmit}
           />
-          {/* <div className="error-msg">
-            <p>ERROR: Movie title is already on the list</p>
-          </div> */}
+
+          
+          <div className="error-msg">
+            {errorMsg}
+          </div>
+      
 
           <Content
             items={items}
