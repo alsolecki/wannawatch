@@ -37,8 +37,7 @@ const SiteNavBar = () => {
         </div>
         <ul className={ menuOpen ? "open" : "unopen"} >
             <li><Link to="https://exhibitgallery.netlify.app">ExhibitGallery</Link></li>
-            <li><Link to="https://foodclock.netlify.app">FoodClock</Link></li>
-            <li><Link to="https://thebarnyard.netlify.app/">BarnYard</Link></li>
+            <li><Link to="https://wanna-watch.netlify.app/">WannaWatch</Link></li>
             <li><Link to="https://alsolecki.com/#contact">Contact</Link></li>
             <li> 
                 <a href="https://babyouterspace.netlify.app/">
