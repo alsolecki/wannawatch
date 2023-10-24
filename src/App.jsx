@@ -6,6 +6,7 @@ import AddMovie from './components/AddMovie.jsx'
 import Content from './components/Content.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
+import ErrorHandle from './components/ErrorHandle.jsx'
 
 function App() {
 
@@ -60,12 +61,16 @@ function App() {
             newMovie={newMovie}
             setNewMovie={setNewMovie}
             handleSubmit={handleSubmit}
-          />
+          >
+          </AddMovie>
+          <ErrorHandle
+              errorMsg={errorMsg}
+            />
 
           
-          <div className="error-msg">
+          {/* <div className="error-msg">
             {errorMsg}
-          </div>
+          </div> */}
       
 
           <Content
