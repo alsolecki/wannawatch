@@ -1,17 +1,38 @@
 import React from 'react'
-import { DndContext, closestCenter } from '@dnd-kit/core'
+import { DndContext, closestCenter, TouchSensor, MouseSensor, KeyboardSensor, useSensor, useSensors } from '@dnd-kit/core'
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 
 import LineItem from './LineItem.jsx'
 
 const MovieList = ({ items, handleDelete, setItems }) => {
 
+  const keyboardSensor = useSensor(KeyboardSensor);
+  const mouseSensor = useSensor(MouseSensor, {
+    // Require the mouse to move by 10 pixels before activating
+    activationConstraint: {
+      distance: 10,
+    },
+  });
+  const touchSensor = useSensor(TouchSensor, {
+    // Press delay of 250ms, with tolerance of 5px of movement
+    activationConstraint: {
+      delay: 5,
+      tolerance: 5,
+    },
+  });
+
+  const sensors = useSensors(
+    mouseSensor,
+    touchSensor,
+    keyboardSensor,
+  );
 
   return (
 
         <DndContext
             collisionDetection={closestCenter}
             onDragEnd={handleDragEnd}
+            sensors={sensors}
         >
             <ul>
                 <SortableContext
