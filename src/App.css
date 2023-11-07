@@ -152,3 +152,57 @@ button {
     cursor: pointer;
     border:rgba(255, 255, 255, 0.2) solid 1px;
 }
+
+.search-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+}
+
+.input-wrapper {
+    background-color: white;
+    width: 100%;
+    border-radius: 5px;
+    height: 2.5rem;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    margin-left: 5px;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+}
+
+#search-icon {
+    color: var(--accent-color-blue);
+}
+
+.results-list {
+    color: black;
+    padding: 0.5rem;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: scroll;
+    position: static;
+}
+
+.search-result {
+    padding: 10px 20px;
+}
+
+.search-result:hover {
+    background-color: papayawhip;
+}

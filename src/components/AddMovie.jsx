@@ -14,7 +14,7 @@ const AddMovie = ({ newMovie, setNewMovie, handleSubmit }) => {
             id="AddMovie"
             type="text"
             placeholder="Add a movie..."
-            autocomplete="one-time-code"
+            autoComplete="one-time-code"
             required
             value={newMovie}
             onChange={(e) => setNewMovie(e.target.value)}

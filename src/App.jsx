@@ -7,12 +7,18 @@ import Content from './components/Content.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import ErrorHandle from './components/ErrorHandle.jsx'
+import SearchBar from './components/SearchBar.jsx'
+import SearchBox from './components/SearchBox.jsx'
+import SearchResultsList from './components/SearchResultsList.jsx'
+
 
 function App() {
 
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('movielist')) || []);
   const [newMovie, setNewMovie] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+
+  const [results, setResults] = useState([]);
 
   //why are we using useEffect here? setting items to the local storage is an effect that needs attention when it's dependency is changed/triggered (items)
   useEffect(() => {
@@ -57,22 +63,19 @@ function App() {
 
         <div className="container">
           <Header title="WannaWatch" />
+
           <AddMovie 
             newMovie={newMovie}
             setNewMovie={setNewMovie}
             handleSubmit={handleSubmit}
-          >
-          </AddMovie>
-          <ErrorHandle
-              errorMsg={errorMsg}
-            />
-
+          />
           
-          {/* <div className="error-msg">
-            {errorMsg}
-          </div> */}
-      
+          {/* <SearchBox /> */}
+          <SearchBar setResults={setResults}/>
+          <SearchResultsList results={results}/>
 
+          <ErrorHandle errorMsg={errorMsg} />
+      
           <Content
             items={items}
             handleDelete={handleDelete}
