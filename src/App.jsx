@@ -8,9 +8,7 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import ErrorHandle from './components/ErrorHandle.jsx'
 import SearchBar from './components/SearchBar.jsx'
-import SearchBox from './components/SearchBox.jsx'
 import SearchResultsList from './components/SearchResultsList.jsx'
-
 
 function App() {
 
