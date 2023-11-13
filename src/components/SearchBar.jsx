@@ -6,7 +6,7 @@ const SearchBar = ({ setResults }) => {
     const [input, setInput] = useState("");
     
     const fetchData = (value) => {
-        const response = fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=96a918ae&s=${value}`);
+        const response = fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=96a918ae&s=${value}`);
         Promise.resolve(response)
             .then((response) => response.json())
             .then((json) => {
