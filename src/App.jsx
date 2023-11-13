@@ -70,7 +70,8 @@ function App() {
           
           {/* <SearchBox /> */}
           <SearchBar setResults={setResults}/>
-          <SearchResultsList results={results}/>
+          {results.length >= 3 ? null : <SearchResultsList results={results}/> }
+          
 
           <ErrorHandle errorMsg={errorMsg} />
       

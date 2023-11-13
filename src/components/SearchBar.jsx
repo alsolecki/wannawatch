@@ -8,25 +8,20 @@ const SearchBar = ({ setResults }) => {
     // const result = fetch("http://localhost:8080/https://rotten-tomatoes-api.ue.r.appspot.com/search/The%20Godfather").catch(console.error);
     
     // result.setHeader("Access-Control-Allow-Origin", "*");
-    const fetchData = async (value) => {
-    //     fetch("https://jsonplaceholder.typicode.com/users")
-        const response = await fetch("https://rotten-tomatoes-api.ue.r.appspot.com/search/The%20Godfather").then(response => response.json().setHeader("Access-Control-Allow-Origin", "*"));
-        // const response = await fetch("http://localhost:8080/https://rotten-tomatoes-api.ue.r.appspot.com/search/The%20Godfather");
-        // const result = await response.json();
-        console.log("hi");
-            // .then((response) => response.json().setHeader("Access-Control-Allow-Origin", "*"))
-            // .then((json) => {
-            //     const results = json.filter((user) => {
-            //         return (
-            //             value && 
-            //             user && 
-            //             user.name && 
-            //             user.username.toLowerCase().includes(value)
-            //         );
-            //     });
-            //     {console.log(results)}
-            //     setResults(results)
-            // });
+    const fetchData = (value) => {
+        const response = fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=96a918ae&s=${value}`);
+        Promise.resolve(response)
+            .then((response) => response.json())
+            .then((json) => {
+                let searchResults = json.Search
+                // console.log(searchResults);
+                const results = searchResults.filter((item) => {
+                    return (
+                        value && item.Title
+                    );
+                });
+                setResults(results)
+            });
     }
 
     const handleChange = (value) => {
