@@ -5,19 +5,15 @@ const SearchBar = ({ setResults }) => {
 
     const [input, setInput] = useState("");
     
-    // const result = fetch("http://localhost:8080/https://rotten-tomatoes-api.ue.r.appspot.com/search/The%20Godfather").catch(console.error);
-    
-    // result.setHeader("Access-Control-Allow-Origin", "*");
     const fetchData = (value) => {
         const response = fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=96a918ae&s=${value}`);
         Promise.resolve(response)
             .then((response) => response.json())
             .then((json) => {
                 let searchResults = json.Search
-                // console.log(searchResults);
                 const results = searchResults.filter((item) => {
                     return (
-                        value && item.Title
+                        value.length >= 4 && item.Title
                     );
                 });
                 setResults(results)
@@ -38,6 +34,7 @@ const SearchBar = ({ setResults }) => {
                 value={input}
                 onChange={(e) => handleChange(e.target.value)}
             />
+            
         </div>
     )
 }

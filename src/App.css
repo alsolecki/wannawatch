@@ -188,15 +188,17 @@ button {
 
 .results-list {
     color: black;
-    padding: 0.5rem;
+    padding-top: 0.75rem;
+    padding-left: 1.1rem;
     width: 100%;
     background: white;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    max-height: 300px;
+    max-height: 210px;
     overflow-y: scroll;
-    position: static;
+    position: relative;
+    top: -8px;
 }
 
 .search-result {

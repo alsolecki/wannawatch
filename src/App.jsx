@@ -57,8 +57,6 @@ function App() {
     <>
       <SiteNavBar />
 
-      {/* {console.log(items)} */}
-
         <div className="container">
           <Header title="WannaWatch" />
 
@@ -68,11 +66,9 @@ function App() {
             handleSubmit={handleSubmit}
           />
           
-          {/* <SearchBox /> */}
-          <SearchBar setResults={setResults}/>
-          {results.length >= 3 ? null : <SearchResultsList results={results}/> }
+          <SearchBar setResults={setResults} />
+          <SearchResultsList results={results} />
           
-
           <ErrorHandle errorMsg={errorMsg} />
       
           <Content
