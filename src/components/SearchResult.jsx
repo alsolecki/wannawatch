@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SearchResult = ({ result }) => {
+const SearchResult = ({ result, handleResultSelection }) => {
     return (
         <div 
             className="search-result" 
-            onClick={(e)=> alert(`You Clicked on ${result}`)}>
+            onClick={(e)=> handleResultSelection(e.target.innerText)}>
             {result}
         </div>
     )

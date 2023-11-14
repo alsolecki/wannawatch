@@ -76,10 +76,10 @@ form {
     cursor: -webkit-grabbing;
 }
 
-.error-msg {
+.error-msg, .confirm-msg {
     /* border: red 1px solid; */
     display: flex;
-    min-height: 22px;
+    min-height: 24px;
     width: 100%;
     height: min-content;
     padding-left: 1rem;
@@ -87,7 +87,15 @@ form {
     margin: -10px 0 -15px;
     color:rgb(218, 65, 65);
     letter-spacing: 1.25px;
+    align-items: flex-end;
+    transition: all 1s ease-out;
 }
+
+.confirm-msg {
+    color:rgb(19, 179, 69);
+}
+
+
 
 .card-controls {
     display: flex;
@@ -142,15 +150,18 @@ footer {
 }
 
 button {
-    height: 48px;
-    min-width: 48px;
+    height: 50px;
+    min-width: 50px;
     border-radius: 0.25rem;
     padding-top: 4px;
     font-size: 1rem;
     background-color: papayawhip;
     color: var(--accent-color-blue);
     cursor: pointer;
-    border:rgba(255, 255, 255, 0.2) solid 1px;
+    border: rgba(255, 255, 255, 0.2) solid 1px;
+    position: relative;
+    top: 2px;
+    z-index: 1;
 }
 
 .search-bar-container {
@@ -164,10 +175,11 @@ button {
     background-color: white;
     width: 100%;
     border-radius: 5px;
-    height: 2.5rem;
-    padding: 0 15px;
+    height: 46px;
+    padding-left: 15px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .input-wrapper input {
@@ -176,6 +188,7 @@ button {
     height: 100%;
     font-size: 1.25rem;
     margin-left: 5px;
+    width: 90%;
 }
 
 .input-wrapper input:focus {
@@ -199,6 +212,7 @@ button {
     overflow-y: scroll;
     position: relative;
     top: -8px;
+    z-index: 0;
 }
 
 .search-result {
@@ -207,4 +221,8 @@ button {
 
 .search-result:hover {
     background-color: papayawhip;
+}
+
+.search-box {
+    width: 100%;
 }

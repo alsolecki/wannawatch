@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { FaSearch } from "react-icons/fa";
+import React, { useRef } from 'react';
+import { FaSearch, FaPlus } from "react-icons/fa";
 
-const SearchBar = ({ setResults }) => {
-
-    const [input, setInput] = useState("");
+const SearchBar = ({ setResults, handleSubmit, input, setInput }) => {
     
+    const inputRef = useRef();
+
     const fetchData = (value) => {
         const response = fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=96a918ae&s=${value}`);
         Promise.resolve(response)
@@ -25,16 +25,27 @@ const SearchBar = ({ setResults }) => {
         fetchData(value)
     }
 
-
     return (
         <div className="input-wrapper">
-            <FaSearch id="search-icon" />
-            <input
-                placeholder="Type to search..."
-                value={input}
-                onChange={(e) => handleChange(e.target.value)}
-            />
-            
+            <div className="search-box">
+                <FaSearch id="search-icon" />
+                <input
+                    autoFocus
+                    ref={inputRef}
+                    placeholder="Type to search..."
+                    value={input}
+                    onChange={(e) => handleChange(e.target.value)}
+                />
+            </div>
+
+            <button
+                type="submit"
+                aria-label="Add Movie"
+                onClick={() => handleSubmit(input)}
+            >
+                <FaPlus />
+            </button>
+
         </div>
     )
 }
