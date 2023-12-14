@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import NavBar from './components/navBar/SiteNavBar.jsx'
 
 import SiteNavBar from './components/navBar/SiteNavBar.jsx'
 import Content from './components/Content.jsx'
@@ -77,6 +78,7 @@ function App() {
 
   return (
     <>
+      <NavBar />
       <SiteNavBar />
 
       <div className="container">
